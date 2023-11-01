@@ -20,6 +20,5 @@ def load_config(path: str | None = None) -> Config:
     env.read_env(path)
     return Config(
          pa_login = env('pa_login'),
-         pa_password=env('pa_password')
-        )
+         pa_password = env('pa_password')
     )
