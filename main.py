@@ -1,5 +1,4 @@
 import os
-from pprint import pprint
 from pyanalysis.client import PaClient
 
 print(os.getenv("pa_login"))
