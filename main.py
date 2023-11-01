@@ -1,10 +1,13 @@
 import os
 from pyanalysis.client import PaClient
+from config_data.config import Config, load_config
 
-print(os.getenv("pa_login"))
-# print(os.getenv("pa_password"))
+config: Config = load_config()
 
-pa_checker = PaClient(username=os.getenv("pa_login"), password=os.getenv("pa_password"))
+print(config.pa_creds.pa_login)
+print(config.pa_creds.pa_password)
+
+pa_checker = PaClient(config.pa_creds.pa_login, config.pa_creds.pa_password)
 
 #v erdict = pa_checker.find_package("botcity-documents", "0.3.1")
 # print(verdict)
